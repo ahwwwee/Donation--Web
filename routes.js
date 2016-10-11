@@ -1,13 +1,21 @@
-const Donation = require('./app/controller/donation');
+const Accounts = require('./app/controller/accounts');
+const Donations = require('./app/controller/donation');
 const Assets = require('./app/controller/assets');
 
 module.exports = [
 
-  { method: 'GET', path: '/', config: Donation.home },
+  { method: 'GET', path: '/', config: Accounts.main },
+  { method: 'GET', path: '/signup', config: Accounts.signup },
+  { method: 'GET', path: '/login', config: Accounts.login },
+  { method: 'POST', path: '/login', config: Accounts.authenticate },
+  { method: 'POST', path: '/register', config: Accounts.register },
+  { method: 'GET', path: '/logout', config: Accounts.logout },
+  { method: 'GET', path: '/settings', config: Accounts.viewSettings },
+  { method: 'POST', path: '/settings', config: Accounts.updateSettings },
 
-  { method: 'GET', path: '/login', config: Donation.login, },
-
-  { method: 'GET', path: '/signup', config: Donation.signup, },
+  { method: 'GET', path: '/home', config: Donations.home },
+  { method: 'GET', path: '/report', config: Donations.report },
+  { method: 'POST', path: '/donate', config: Donations.donate },
 
   {
     method: 'GET',
@@ -15,4 +23,5 @@ module.exports = [
     config: { auth: false },
     handler: Assets.servePublicDirectory,
   },
+
 ];
