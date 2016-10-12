@@ -14,22 +14,6 @@ exports.home = {
 exports.report = {
 
   handler: function (request, reply) {
-    reply.view('report', { title: 'Donations to Date' });
-  },
-
-};
-
-exports.donate = {
-
-  handler: function (request, reply) {
-    reply.redirect('/report');
-  },
-
-};
-
-exports.report = {
-
-  handler: function (request, reply) {
     Donation.find({}).populate('donor').then(allDonations => {
       reply.view('report', {
         title: 'Donations to Date',
