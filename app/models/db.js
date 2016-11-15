@@ -19,6 +19,7 @@ mongoose.connection.on('connected', function () {
   if (process.env.NODE_ENV === 'production') {
     dbURI = process.env.MONGOLAB_URI;
   }
+
   console.log('Mongoose connected to ' + dbURI);
   if (process.env.NODE_ENV != 'production') {
     var seeder = require('mongoose-seeder');

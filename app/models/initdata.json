@@ -54,4 +54,17 @@
       "candidate": "->candidates.donald"
     }
   }
+  "candidates": {
+    "model": "Candidate",
+    "oneC": {
+      "firstName": "Lisa",
+      "lastName": "Simpson",
+      "office": "President"
+    },
+    "twoC": {
+      "firstName": "Donald",
+      "lastName": "Simpson",
+      "office": "President"
+    }
+  },
 }
