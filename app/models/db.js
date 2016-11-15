@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
-let dbURI = 'mongodb://localhost/donation';
+let dbURI = 'mongodb://homer:secret@ds061345.mlab.com:61345/donation';
 
 mongoose.connect(dbURI);
 
